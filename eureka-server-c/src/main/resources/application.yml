@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: eureka servers
+
+#端口号
+server:
+  port: 8003
+
+#eureka配置信息
+eureka:
+  #Eureka实例名，集群中根据这里相互识别
+  instance:
+    hostname: eurekaC
+    #如果不想使用主机名来定义服务,可以用ip地址的形式, 该模式默认为false
+    #prefer-ip-address: true
+  client:
+    ## 默认情况下,该服务注册中心也会将自己作为客户端来尝试向注册中心注册它自己,因此需要禁用它的客户端注册行为
+    # 不向注册中心注册自己false; 如果是集群 则配置为true
+    register-with-eureka: true
+    # 不需要从注册中心检索服务false; 如果是集群 则配置为true
+    fetch-registry: true
+    #注册中心地址
+    serviceUrl:
+      defaultZone: http://eurekaA:8001/eureka/,http://eurekaB:8002/eureka/
+
+

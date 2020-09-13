@@ -1,0 +1,15 @@
+## 服务信息
+spring:
+  application:
+    name: order-service
+
+#eureka配置
+eureka:
+  client:
+    #注册中心地址,如果是注册中心集群,则用英文逗号分隔,如: http://eurekaA:8001/eureka/,http://eurekaB:8002/eureka/,http://eurekaB:8002/eureka/,http://eurekaC:8003/eureka/
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+#端口号
+server:
+  port: 1002

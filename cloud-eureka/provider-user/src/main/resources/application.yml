@@ -1,0 +1,23 @@
+## 服务信息
+spring:
+  application:
+    name: user-service
+
+#端口号
+server:
+  port: 1001
+
+
+#eureka配置
+eureka:
+  client:
+  #注册中心地址,如果是注册中心集群,则用英文逗号分隔,如: http://eurekaA:8001/eureka/,http://eurekaB:8002/eureka/,http://eurekaB:8002/eureka/,http://eurekaC:8003/eureka/
+    serviceUrl.defaultZone: http://localhost:8761/eureka/
+  instance:
+  # Renew: 服务续约
+  #Eureka Client会每隔30秒发送一次心跳来续约。通过续约来告知Eureka Serve该Eureka Client运行正常，没有出现问题。
+  #默认情况下，如果Eureka Server在90秒内没有收到Eureka Client的续约，
+  #Server端会将实例从其注册表中删除，此时间可配置，一般情况不建议更改
+    lease-renewal-interval-in-seconds: 30
+    lease-expiration-duration-in-seconds: 90
+
